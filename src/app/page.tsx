@@ -1,95 +1,62 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from 'next/link'
 
-export default function Home() {
+import { Experience } from './components/Experience'
+import { Projects } from './components/Projects'
+import { Skills } from './components/Skills'
+import { Education } from './components/Education'
+import { Contact } from './components/Contact'
+
+export default function Portfolio() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-white text-gray-900 font-sans ">
+      <header className="sticky top-0 z-10 bg-white border-b border-gray-200">
+        <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="space-x-4">
+            <Link href="#experience" className="hover:underline">
+              Experience
+            </Link>
+            <Link href="#projects" className="hover:underline">
+              Projects
+            </Link>
+            <Link href="#skills" className="hover:underline">
+              Skills
+            </Link>
+            <Link href="#education" className="hover:underline">
+              Education
+            </Link>
+            <Link href="#contact" className="hover:underline">
+              Contact
+            </Link>
+          </div>
+        </nav>
+      </header>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <main className="container mx-auto px-4 py-8">
+        <section className="mb-16 text-center">
+          <h1 className="text-4xl font-bold mb-4">Kiran Krishna N</h1>
+          <p className="text-xl mb-8">
+            Frontend Developer | Full Stack Developer
+          </p>
+          <Link
+            href="#contact"
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300"
           >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+            Get in touch
+          </Link>
+        </section>
+        <Experience />
+        <Projects />
+        <Skills />
+        <Education />
+        <Contact />
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="bg-gray-100 py-4 text-center">
+        <p>
+          &copy; {new Date().getFullYear()} Kiran Krishna N. All rights
+          reserved.
+        </p>
       </footer>
     </div>
-  );
+  )
 }
